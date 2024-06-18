@@ -1,0 +1,86 @@
+1. While creating Project on SpringBoot Starter : Select
+      a. Spring Web
+      b. Spring Data JPA
+      c. MySQL Driver
+      
+  Create table books in library database
+  
+  create table books(bookId int primary key, bookName varchar(30), author varchar(30), price int);
+  -------------------------
+
+
+In PostMan :Choose..   (Body-raw -> JSON)
+=====================
+Add New Book
+POST : 
+http://localhost:8087/api/v1/library/addbook
+
+{  
+    "bookid": "1001",  
+    "bookname": "Java Unleashed",  
+    "author": "Michael Morrison",  
+    "price": "400"  
+}  
+
+POST :
+http://localhost:8087/api/v1/library/addbook
+
+{  
+    "bookid": "1002",  
+    "bookname": "Computer Networks",  
+    "author": "Tanenbaum",  
+    "price": "692"  
+}  
+
+--
+Get Book by Id
+
+http://localhost:8087/api/v1/library/getbook/1001
+
+{  
+    "bookid": "1001",  
+    "bookname": "Java Unleashed",  
+    "author": "Michael Morrison",  
+    "price": "400"  
+}
+--
+Get All Books :
+
+http://localhost:8087/api/v1/library/getallbooks
+
+{  
+    "bookid": "1001",  
+    "bookname": "Java Unleashed",  
+    "author": "Michael Morrison",  
+    "price": "400"  
+}  
+
+{  
+    "bookid": "1002",  
+    "bookname": "Computer Networks",  
+    "author": "Tanenbaum",  
+    "price": "692"  
+}  
+--
+
+Update : 
+Postman : PUT
+  
+http://localhost:8087/api/v1/library/updatebook
+** Change price 692 to 600
+{  
+    "bookid": "1002",  
+    "bookname": "Computer Networks",  
+    "author": "Tanenbaum",  
+    "price": "600"  
+} 
+--
+Delete :
+Postman  : DELETE
+http://localhost:8087/deletebook/1002
+
+
+  
+   
+  
+  
